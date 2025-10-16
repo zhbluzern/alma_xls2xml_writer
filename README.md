@@ -65,3 +65,35 @@ for index, row in xmlFile.df.iterrows():
 
     #break
 ```
+
+### Output
+
+The example data table shown above leads with paramter `marc=False` to the following xml-result:
+
+```xml
+<?xml version="1.0" ?>
+<collection>
+  <record>
+    <leader>00000nam#a2200000#u#4500</leader>
+    <controlfield tag="001">9911............01</controlfield>
+    <datafield tag="856" ind1="4" ind2="2">
+      <subfield code="u">https://test.url</subfield>
+      <subfield code="3">My Test URL Description in $$3 </subfield>
+    </datafield>
+  </record>
+</colleciton>
+```
+Output with paramter `marc=True`
+
+```xml
+<?xml version="1.0" ?>
+<marc:records xmlns:marc="http://www.loc.gov/MARC21/slim">
+  <marc:record>
+    <leader>00000nam#a2200000#u#4500</leader>
+    <marc:controlfield tag="001">9911............01</marc:controlfield>
+    <marc:datafield tag="856" ind1="4" ind2="2">
+      <marc:subfield code="u">https://test.url</marc:subfield>
+      <marc:subfield code="3">My Test URL Description in $$3</marc:subfield>
+    </marc:datafield>
+  </marc:record>
+```
