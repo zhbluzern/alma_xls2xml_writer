@@ -1,0 +1,4 @@
+Docker*
+*.xml
+*.xlsx
+__pycache__/
